@@ -76,35 +76,3 @@ img {
 #footer a.active {
   color: orange;
 }
-#main {
-  /* 轮播图区域 */
-}
-#main a {
-  display: block;
-}
-#main a img {
-  width: 100%;
-}
-#main .nav {
-  padding: .1rem;
-}
-#main .banner {
-  padding: 0 .1rem;
-}
-#main .banner .left a {
-  display: flex;
-}
-#main .banner .left a img {
-  width: 50%;
-  height: 1.2rem;
-}
-#main .banner .right a img {
-  height: 2.4rem;
-}
-#main .brand,
-#main .sports,
-#main .women,
-#main .man,
-#main .flash {
-  padding: .1rem;
-}

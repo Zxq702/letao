@@ -1,0 +1,96 @@
+// 定义一些公共变量
+@main-color:#006699;
+// 样式初始化
+html{
+    font-size: 26.66667vw;
+}
+body{
+    font-size: .14rem;
+}
+// 去掉标题默认间距
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+// 去除图片和块级元素之间3px的间距
+img{
+    vertical-align: middle;
+}
+// 一些公共样式:头部/底部在base.less里面写
+#header{
+    background-color: @main-color;
+    display: flex;
+    color: #fff; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    // 因为固定定位了,所以默认没有100%的宽度,需要重新设置
+    width: 100%;
+    .left{
+        width: .45rem;
+        width: .45rem;
+    }
+    .center{
+        flex: 1;
+        text-align: center;
+        h4{
+            line-height: .45rem;
+            font-weight: normal;
+        }
+    } 
+    .right{
+        width: .45rem;  
+        width: .45rem;
+        text-align: center;
+        line-height: .45rem;
+    }
+}
+#main{
+    padding: .45rem 0;
+    height: 100vh;
+    position: relative;
+
+    // 第一种方法:MUI的区域滚动样式修改  把容器绝对定位改成相对定位 设置高度和main内容一样
+    .mui-scroll-wrapper {
+        // 把默认绝对定位改成相对定位
+        position: relative;
+        // 把这个区域滚动的盒子高度设置为100% 和main的内容一样
+        height: 100%;
+    }
+    // 第二种方法:swiper的内容滚动样式修改 给父容器高度固定100% 子容器高度auto
+    .swiper-container {
+        height: 100%;
+
+        // 子容器的高度 为auto
+        .swiper-slide {
+            height: auto;
+        }
+    }
+
+}
+// 底部区域
+#footer {
+    background-color: @main-color;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    // 固定定位了.所以默认没有100%的宽度了,需要重新设置
+    width: 100%;
+
+    a {
+        display: flex;
+        height: .45rem;
+        color: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;    
+
+        // 把默认的span行高替换成1
+        span{
+            line-height: 1;
+        }
+        &.active{
+            color: orange;
+        }
+
+    }
+}
